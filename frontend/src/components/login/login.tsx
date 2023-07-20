@@ -31,9 +31,10 @@ const Login = () => {
             <p className={styles.text}>
               Забыли пароль?
             </p>
-            <a href='#' className={styles.textLink}>
+            <NavLink to={RouteLinks.ForgotPassword} className={styles.textLink}>
               Восстановить пароль
-            </a>
+              </NavLink>
+            ForgotPassword
           </div>
         </div>
       </form>

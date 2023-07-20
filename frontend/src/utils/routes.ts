@@ -1,5 +1,6 @@
 export enum RouteLinks {
   Home = '/',
   Login = '/signin/',
-  Register = '/register'
+  Register = '/register',
+  ForgotPassword = '/forgot-password'
 }

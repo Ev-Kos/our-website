@@ -7,7 +7,5 @@ export default function LoginPage() {
       <AppHeader/>
       <Login />
     </>
-
   )
-
 }

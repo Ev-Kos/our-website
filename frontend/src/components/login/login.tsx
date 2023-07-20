@@ -1,4 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import styles from './login.module.css';
+import { RouteLinks } from '../../utils/routes';
 
 const Login = () => {
   return (
@@ -21,9 +23,9 @@ const Login = () => {
             <p className={styles.text}>
               Вы — новый пользователь?
             </p>
-            <a href='#' className={styles.textLink}>
+            <NavLink to={RouteLinks.Register} className={styles.textLink}>
               Зарегистрироваться
-            </a>
+            </NavLink>
           </div>
           <div className={styles.container}>
             <p className={styles.text}>
@@ -34,7 +36,6 @@ const Login = () => {
             </a>
           </div>
         </div>
-
       </form>
     </section>
   )

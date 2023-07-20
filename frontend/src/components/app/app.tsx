@@ -1,12 +1,10 @@
-import AppHeader from "../app-header/app-header";
-import Login from "../login/login";
+import { RouteLinks } from "../../utils/utils";
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import LoginPage from "../pages/login";
 
-export default function App() {
-  return (
-    <>
-    <AppHeader/>
-    <Login/>
-    </>
-
+const App = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path={RouteLinks.Login} element={<LoginPage />} />
   )
-}
+)
+export default App

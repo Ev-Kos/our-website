@@ -34,7 +34,6 @@ const Login = () => {
             <NavLink to={RouteLinks.ForgotPassword} className={styles.textLink}>
               Восстановить пароль
               </NavLink>
-            ForgotPassword
           </div>
         </div>
       </form>

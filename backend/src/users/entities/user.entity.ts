@@ -2,7 +2,7 @@ import { Entity, Column } from 'typeorm';
 import { Length, IsNotEmpty, IsEmail, IsOptional } from 'class-validator';
 import { BaseEntity } from 'src/utils/base-entity';
 
-@Entity()
+@Entity({ database: 'our-website' })
 export class User extends BaseEntity {
   @Column({ unique: true })
   @Length(2, 15)
@@ -28,4 +28,8 @@ export class User extends BaseEntity {
   @Column()
   @IsNotEmpty()
   password: string;
+
+  @Column({ default: false })
+  @IsOptional()
+  super_user: boolean;
 }

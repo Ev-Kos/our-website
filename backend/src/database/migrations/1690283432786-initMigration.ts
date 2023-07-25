@@ -3,7 +3,7 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 export class InitMigration1690104042289 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `CREATE TABLE "our-website"."user" (
+      `CREATE TABLE "our_website"."user" (
         "id" SERIAL NOT NULL,
         "created_At" TIMESTAMPTZ NOT NULL,
         "updated_At" TIMESTAMPTZ NOT NULL,
@@ -21,6 +21,6 @@ export class InitMigration1690104042289 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`DROP TABLE "our-website"."user"`);
+    await queryRunner.query(`DROP TABLE "our_website"."user"`);
   }
 }

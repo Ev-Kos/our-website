@@ -9,5 +9,9 @@ import {
   Param,
   NotFoundException,
 } from '@nestjs/common';
+import { UsersService } from './users.service';
 
-export class UsersController {}
+@Controller('users')
+export class UsersController {
+  constructor(private usersService: UsersService) {}
+}

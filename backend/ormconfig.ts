@@ -11,3 +11,11 @@ export const AppDataSource = new DataSource({
   migrations: ['./src/database/migrations/*.ts'],
   synchronize: false,
 });
+
+AppDataSource.initialize()
+  .then(() => {
+    console.log('Data Source has been initialized!');
+  })
+  .catch((err) => {
+    console.error('Error during Data Source initialization', err);
+  });

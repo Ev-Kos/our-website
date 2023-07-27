@@ -1,8 +1,5 @@
 import {
   Controller,
-  Patch,
-  Body,
-  Post,
   Req,
   Get,
   UseGuards,
@@ -10,8 +7,15 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { JwtGuard } from 'src/guards/jwt.guard';
 
-@Controller('users')
+@UseGuards(JwtGuard)
+@Controller()
 export class UsersController {
   constructor(private usersService: UsersService) {}
+
+  @Get('profile')
+  getUser(@Req() req: any) {
+    return this.usersService.findOne(req.user.id);
+  }
 }

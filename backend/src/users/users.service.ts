@@ -14,16 +14,8 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto): Promise<User> {
-    const login = await this.usersRepository.findOne({
-      where: {
-        login: createUserDto.login,
-      },
-    });
-    const email = await this.usersRepository.findOne({
-      where: {
-        email: createUserDto.email,
-      },
-    });
+    const login = await this.findUserLogin(createUserDto.login);
+    const email = await this.findEmail(createUserDto.email);
     if (login !== null) {
       throw new ForbiddenException(
         'Пользователь с таким логином уже зарегистрирован',
@@ -37,5 +29,25 @@ export class UsersService {
     const user = this.usersRepository.create(createUserDto);
     user.password = await this.passwordHashService.createHash(user.password);
     return await this.usersRepository.save(user);
+  }
+
+  async findOne(id: number): Promise<User> {
+    return await this.usersRepository.findOneBy({ id });
+  }
+
+  async findUserLogin(login: string): Promise<User> {
+    return await this.usersRepository.findOne({
+      where: {
+        login: login,
+      },
+    });
+  }
+
+  async findEmail(email: string): Promise<User> {
+    return await this.usersRepository.findOne({
+      where: {
+        email: email,
+      },
+    });
   }
 }

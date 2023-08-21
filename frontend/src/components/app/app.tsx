@@ -1,17 +1,8 @@
-import { RouteLinks } from "../../utils/routes";
-import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-import LoginPage from "../../pages/login";
-import RegistrationPage from "../../pages/regiatration";
-import ForgotPasswordPage from "../../pages/forgot-password";
+import { RouterProvider } from "react-router-dom";
+import { router } from "../../pages/routes";
 
-const App = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path={RouteLinks.Login} element={<LoginPage />} />
-      <Route path={RouteLinks.Register} element={<RegistrationPage />} />
-      <Route path={RouteLinks.ForgotPassword} element={<ForgotPasswordPage />} />
-    </>
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
-  )
-)
-export default App
+export default App;

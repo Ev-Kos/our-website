@@ -1,6 +1,6 @@
 export enum RouteLinks {
   Home = '/',
-  Login = '/signin/',
+  Login = '/signin',
   Register = '/register',
   ForgotPassword = '/forgot-password',
   Profile = '/profile'

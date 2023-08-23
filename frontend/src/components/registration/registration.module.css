@@ -13,7 +13,7 @@
 .wrapForm {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
   align-items: center;
   width: 100%;
 }
@@ -25,7 +25,11 @@
   color: #fff;
   margin: 0;
 }
-
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  height: 64px;
+}
 .input {
   width: 480px;
   background-color: initial;
@@ -86,4 +90,15 @@ input:focus-visible {
   font-weight: 400;
   text-decoration: none;
   padding-left: 10px;
+}
+
+.textLink:hover {
+  opacity: 0.7;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
 }

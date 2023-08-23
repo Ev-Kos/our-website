@@ -50,6 +50,7 @@ export const userRegister: AppThunk =
         getUserRegister(login, username, usersurname, usersecondname, email, password, super_user)
           .then((data) => {
             dispatch(UserRegisterSuccess(data))
+            console.log(1)
           })
           .catch((err) => {
             console.log(err)

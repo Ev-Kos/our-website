@@ -18,7 +18,7 @@ export const getUserRegister = (
   password: string,
   super_user: boolean
   ) => {
-  return fetch(`${baseUrl}auth/register`, {
+  return fetch(`${baseUrl}register`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'},

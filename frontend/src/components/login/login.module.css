@@ -86,3 +86,7 @@ input:focus-visible {
   font-weight: 400;
   text-decoration: none;
 }
+
+.textLink:hover {
+  opacity: 0.7;
+}

@@ -1,4 +1,4 @@
-import { TUserRegister } from "../services/types/data";
+import { TUserLogin, TUserRegister } from "../services/types/data";
 
 const baseUrl = 'http://localhost:3007/';
 
@@ -35,17 +35,14 @@ export const getUserRegister = (
   .then((res) => checkResponse<TUserRegister>(res))
 }
 
-export const getUserLogin = (userEmail: string, userPassword: string) => {
+export const getUserLogin = (userLogin: string, userPassword: string) => {
   return fetch(`${baseUrl}signin`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'},
-      body: JSON.stringify({
-          'email': userEmail,
-          'password': userPassword
-      })
+      body: JSON.stringify({ userLogin, userPassword }),
   })
-  .then((res) => checkResponse<TUserRegister>(res))
+  .then((res) => checkResponse<TUserLogin>(res))
 }
 
 // export const userLogout = (token: string) => {
@@ -59,3 +56,10 @@ export const getUserLogin = (userEmail: string, userPassword: string) => {
 //   })
 //   .then((res) => checkResponse<TUserLogout>(res))
 // }
+
+// export const getOwnUser = () => {
+//   return fetch(`${URL}/users/me/`, {
+//     method: "GET",
+//     headers: headersWithAuthorizeFn(),
+//   }).then(checkResponse);
+// };

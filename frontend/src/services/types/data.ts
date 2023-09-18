@@ -7,3 +7,9 @@ export type TUserRegister = {
   password: string;
   super_user?: boolean;
 }
+
+export type TUserLogin = {
+  login?: string;
+  password?: string;
+  access_token?: string;
+}

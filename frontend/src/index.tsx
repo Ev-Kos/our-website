@@ -5,6 +5,7 @@ import App from './components/app/app';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './services/store';
+import { ProvideAuth } from './services/auth';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
   root.render(
     <React.StrictMode>
         <Provider store={ store }>
-          <App />
+          <ProvideAuth>
+            <App />
+          </ProvideAuth>
         </Provider>
     </React.StrictMode>
 
